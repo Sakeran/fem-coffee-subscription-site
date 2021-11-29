@@ -1,0 +1,38 @@
+---
+export interface Props {
+  title?: string
+}
+
+const title = (Astro.props.title ? `${Astro.props.title} - ` : "") + "Coffeeroasters";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="PATH_TO_FAVICON" />
+
+    <title>{title}</title>
+		
+		<!-- INSERT FONTS HERE -->
+
+    <link rel="stylesheet" type="text/css" href={Astro.resolve("../styles/global.scss")}>
+  </head>
+
+
+  <body>
+    <a href="#main-content">Skip to Main Content</a>
+
+    <header>
+			<!-- HEADER STUFF -->
+    </header>
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <footer>
+			<!-- FOOTER STUFF -->
+		</footer>
+
+  </body>
+</html>
