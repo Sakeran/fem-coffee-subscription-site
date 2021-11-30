@@ -1,0 +1,139 @@
+---
+---
+
+<style lang="scss">
+  button {
+    min-width: 2rem;
+    min-height: 2rem;
+  }
+
+  ul {
+    background: #fefcf6;
+    background: linear-gradient(
+      to bottom,
+      hsl(43, 78%, 98%) 40%,
+      hsla(43, 78%, 98%, 0)
+    );
+
+    color: transparent;
+
+    transform-origin: center top;
+    transform: scaleY(0);
+    pointer-events: none;
+
+    transition: transform 0.2s ease-in-out, color 0.1s ease-in-out;
+
+    li {
+      transform: translateY(-2em);
+      transition: transform 0.2s ease-out 0.15s;
+    }
+
+    &[data-visible="true"] {
+      color: hsla(215, 19%, 25%);
+      transform: scaleY(1);
+      pointer-events: all;
+
+      transition: transform 0.2s ease-in-out, color 0.4s ease-in-out 0.2s;
+
+      li {
+        transform: translateY(0);
+      }
+    }
+
+    @media screen and (min-width: 640px) {
+      position: static;
+
+      background: none;
+      pointer-events: all;
+      color: hsla(215, 5%, 54%);
+
+      transform: none;
+      transition: none;
+
+      li {
+        transform: none;
+        transition: none;
+      }
+    }
+  }
+</style>
+
+<header class="wrapper | relative">
+  <div class="flex items-center justify-between | pt-8 pb-8">
+    <div class="max-w-[50%]">
+      <img src="/assets/shared/desktop/logo.svg" alt="Coffeeroasters" />
+    </div>
+
+    <nav class="">
+      <button
+        id="primary-nav-toggle"
+        aria-controls="primary-navigation"
+        class="grid place-items-center | p-2 | sm:hidden"
+      >
+        <span class="sr-only">MENU</span>
+        <img
+          id="primary-nav-toggle-hamburger"
+          src="/assets/shared/mobile/icon-hamburger.svg"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          class="hidden"
+          id="primary-nav-toggle-close"
+          src="/assets/shared/mobile/icon-close.svg"
+          alt=""
+          aria-hidden="true"
+        />
+      </button>
+
+      <ul
+        id="primary-navigation"
+        data-visible="false"
+        class="
+          absolute
+          top-full
+          left-0
+          right-0
+          |
+          pt-10
+          pb-[375px] sm:py-0
+          font-serif sm:font-sans font-black sm:font-bold sm:uppercase
+          text-6 sm:text-3 text-prose sm:text-gray sm:tracking-[1px]
+          |
+          flex flex-col sm:flex-row
+          gap-8
+          items-center
+        "
+      >
+        <li><a class="sm:hover:text-prose sm:focus-within:text-prose transition-colors ease-in-out duration-150" href="/">Home</a></li>
+        <li><a class="sm:hover:text-prose sm:focus-within:text-prose transition-colors ease-in-out duration-150" href="/about">About Us</a></li>
+        <li><a class="sm:hover:text-prose sm:focus-within:text-prose transition-colors ease-in-out duration-150" href="/plan">Create Your Plan</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Note: Current version of Astro (v0.21) breaks the 'hoist' keyword,
+     hence the use of "defer" instead. -->
+<script defer>
+  const nav = document.getElementById("primary-navigation");
+
+  const toggle = document.getElementById("primary-nav-toggle");
+  const hamburger = document.getElementById("primary-nav-toggle-hamburger");
+  const close = document.getElementById("primary-nav-toggle-close");
+
+  toggle.addEventListener("click", () => {
+    toggle.setAttribute(
+      "aria-expanded",
+      nav.getAttribute("aria-expanded") == "true" ? "false" : "true"
+    );
+
+    hamburger.classList.toggle("hidden");
+    close.classList.toggle("hidden");
+
+    nav.setAttribute(
+      "data-visible",
+      nav.getAttribute("data-visible") == "true" ? "false" : "true"
+    );
+  });
+</script>

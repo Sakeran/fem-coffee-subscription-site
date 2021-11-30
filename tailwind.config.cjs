@@ -14,7 +14,7 @@ module.exports = {
       "sans": ["Barlow", "sans"],
     },
     fontSize: {
-      12: "0.75rem",
+      3: "0.75rem",
       "base-sm": "0.9375rem",
       base: "1rem",
       "base-lg": "1.125rem",
