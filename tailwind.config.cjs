@@ -4,10 +4,12 @@ module.exports = {
   theme: {
     colors: {
       primary: "hsl(179, 81%, 29%)",
+      "primary-600": "hsl(179, 55%, 61%)",
       accent: "hsl(25, 94%, 86%)",
       prose: "hsl(215, 19%, 25%)",
       cream: "hsl(43, 78%, 98%)",
       gray: "hsl(215, 5%, 54%)",
+      disabled: "hsl(25, 11%, 87%)"
     },
     fontFamily: {
       "serif": ["Fraunces", "serif"],
@@ -34,5 +36,15 @@ module.exports = {
       none: "1",
       half: "0.48",
     },
+    extend: {
+      backgroundImage: {
+        'hero': `url("/assets/home/mobile/image-hero-coffeepress.jpg")`,
+        'hero-sm': `url("/assets/home/tablet/image-hero-coffeepress.jpg")`,
+        'hero-md': `url("/assets/home/desktop/image-hero-coffeepress.jpg")`,
+      },
+      borderRadius: {
+        10: "0.625em"
+      }
+    }
   },
 };

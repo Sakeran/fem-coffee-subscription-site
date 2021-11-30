@@ -4,7 +4,7 @@
 
 @layer utilities {
   .wrapper {
-    @apply ml-auto mr-auto box-content pl-6 pr-6;
+    @apply ml-auto mr-auto box-content px-6 sm:px-10 lg:px-20;
     max-width: 1280px;
   }
 }
