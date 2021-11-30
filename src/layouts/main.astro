@@ -9,13 +9,15 @@ const title = (Astro.props.title ? `${Astro.props.title} - ` : "") + "Coffeeroas
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="PATH_TO_FAVICON" />
+    <link rel="icon" type="image/x-icon" href="/public/assets/favicon-32x32.png" />
 
     <title>{title}</title>
-		
-		<!-- INSERT FONTS HERE -->
 
     <link rel="stylesheet" type="text/css" href={Astro.resolve("../styles/global.scss")}>
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=Fraunces:wght@900&display=swap" rel="stylesheet">
   </head>
 
 
