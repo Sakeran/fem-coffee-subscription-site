@@ -9,10 +9,10 @@ const {src, title, text} = Astro.props;
 
 ---
 
-<div class="px-2 pt-18 pb-12 sm:py-10 lg:pt-18 lg:pb-12 bg-primary rounded-lg | flex-grow | flex flex-col items-center sm:flex-row sm:justify-center lg:justify-start sm:gap-14 lg:flex-col lg:gap-0 | text-center sm:text-left lg:text-center">
+<div class="px-2 pt-18 pb-12 md:py-10 lg:pt-18 lg:pb-12 bg-primary rounded-lg | flex-grow | flex flex-col items-center md:flex-row md:justify-center lg:justify-start md:gap-14 lg:flex-col lg:gap-0 | text-center md:text-left lg:text-center">
     <img class="" src={src} alt="">
-    <div class="mt-14 sm:mt-0 lg:mt-14 | flex flex-col gap-6 sm:gap-4 lg:gap-6">
+    <div class="mt-14 md:mt-0 lg:mt-14 | flex flex-col gap-6 md:gap-4 lg:gap-6">
       <p class="text-6 font-serif font-black leading-tight">{title}</p>
-      <p class="text-base-sm lg:text-base max-w-[25ch] sm:max-w-[41ch] lg:max-w-[30ch]">{text}</p>
+      <p class="text-base-sm lg:text-base max-w-[25ch] md:max-w-[41ch] lg:max-w-[30ch]">{text}</p>
     </div>
 </div>
