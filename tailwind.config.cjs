@@ -41,6 +41,10 @@ module.exports = {
         "coffee-sm": "765px",
         "coffee-lg": "1230px"
       },
+      spacing: {
+        18: "4.5rem",
+        25: "6.25rem"
+      },
       backgroundImage: {
         'hero': `url("/assets/home/mobile/image-hero-coffeepress.jpg")`,
         'hero-sm': `url("/assets/home/tablet/image-hero-coffeepress.jpg")`,

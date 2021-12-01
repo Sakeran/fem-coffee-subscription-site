@@ -1,26 +1,38 @@
-<div>
-  <h2>Why choose us?</h2>
-  <p>A large part of our role is choosing which particular coffees will be featured 
-      in our range. This means working closely with the best coffee growers to give 
-      you a more impactful experience on every level.</p>
-  
-  <div>
-      <div>
-          <img src="/assets/home/desktop/icon-coffee-bean.svg" alt="">
-          <p>Best quality</p>
-          <p>Discover an endless variety of the world’s best artisan coffee from each of our roasters.</p>
-      </div>
+---
+import Card from "./ChooseUsCard.astro";
+---
 
-      <div>
-          <img src="/assets/home/desktop/icon-gift.svg" alt="">
-          <p>Exclusive benefits</p>
-          <p>Special offers and swag when you subscribe, including 30% off your first shipment.</p>
-      </div>
+<section class="wrapper-large">
 
-      <div>
-          <img src="/assets/home/desktop/icon-truck.svg" alt="">
-          <p>Free shipping</p>
-          <p>We cover the cost and coffee is delivered fast. Peak freshness: guaranteed.</p>
+  <div class="relative | pt-16 lg:pt-25 pb-[41rem] mb-[36.1875rem] sm:pb-[23rem] sm:mb-[18.1875rem] lg:pb-[19.75rem] lg:mb-[12rem] | bg-prose text-cream rounded-10">
+      <div class="text-center | flex flex-col items-center">
+          <h2 class="text-7 sm:text-8 lg:text-10 leading-none font-serif sm:leading-base">Why choose us?</h2>
+          <p class="mt-6 lg:mt-8 | text-base-sm lg:text-base text-cream/80 max-w-[35ch] sm:max-w-[57ch]">A large part of our role is choosing which particular coffees will be featured
+              in our range. This means working closely with the best coffee growers to give
+              you a more impactful experience on every level.</p>
+      </div>
+      
+      <div class="absolute left-0 right-0 top-full | transform translate-y-[-50%]">
+          <div class="wrapper">
+              <div class="flex flex-col gap-6 lg:flex-row lg:gap-30">
+                  <Card
+                    src="/assets/home/desktop/icon-coffee-bean.svg"
+                    title="Best Quality"
+                    text="Discover an endless variety of the world’s best artisan coffee from each of our roasters."
+                  />
+                  <Card
+                    src="/assets/home/desktop/icon-gift.svg"
+                    title="Exclusive benefits"
+                    text="Special offers and swag when you subscribe, including 30% off your first shipment."
+                  />
+                  <Card
+                    src="/assets/home/desktop/icon-truck.svg"
+                    title="Free shipping"
+                    text="We cover the cost and coffee is delivered fast. Peak freshness: guaranteed."
+                  />
+              </div>
+          </div>
       </div>
   </div>
-</div>
+
+</section>
