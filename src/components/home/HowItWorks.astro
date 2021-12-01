@@ -1,20 +1,40 @@
-<div>
-  <h2>How it works</h2>
+---
+import { Button } from "../shared/Button.tsx";
 
-  <div>
-      <div>
-          <p>01 Pick your coffee</p>
-          <p>Select from our evolving range of artisan coffees. Our beans are ethically sourced and we pay fair prices for them. There are new coffees in all profiles every month for you to try out.</p>
+import Card from "./HowItWorksCard.astro";
+
+---
+
+<section class="wrapper">
+  <h2 class="text-gray text-6 font-serif font-black leading-tight text-center md:text-left">How it works</h2>
+
+  <div class="my-20 md:my-10 | flex flex-col md:flex-row gap-14 md:gap-0">
+      <div class="md:w-full">
+          <Card
+            step="01"
+            title="Pick your coffee"
+            text="Select from our evolving range of artisan coffees. Our beans are ethically sourced and we pay fair prices for them. There are new coffees in all profiles every month for you to try out."
+          />
       </div>
-      <div>
-          <p>02 Choose the frequency</p>
-          <p>Customize your order frequency, quantity, even your roast style and grind type. Pause, skip or cancel your subscription with no commitment through our online portal.</p>
+      <div class="md:w-full">
+          <Card
+            step="02"
+            title="Choose the frequency"
+            text="Customize your order frequency, quantity, even your roast style and grind type. Pause, skip or cancel your subscription with no commitment through our online portal."
+          />
       </div>
-      <div>
-          <p>03 Receive and enjoy!</p>
-          <p>We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning world-class coffees curated to provide a distinct tasting experience.</p>
+      <div class="md:w-full">
+          <Card
+            step="03"
+            title="Receive and enjoy!"
+            text="We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning world-class coffees curated to provide a distinct tasting experience."
+            noLine={true}
+          />
       </div>
   </div>
 
-  <p>Create your plan (!)</p>
-</div>
+
+  <div class="text-center md:text-left">
+    <Button href="/plan">Create your plan</Button>
+  </div>
+</section>

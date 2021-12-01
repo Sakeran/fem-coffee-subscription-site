@@ -1,0 +1,55 @@
+---
+export interface Props {
+  step: string;
+  title: string;
+  text: string;
+  noLine?: boolean
+}
+
+const {step, title, text, noLine} = Astro.props;
+
+---
+
+<style lang="scss">
+  @media (min-width: 768px) {
+    div {
+      &::before {
+        content: "";
+
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: hsl(25, 94%, 86%); 
+      }
+
+      &.noline::before {
+        content: none;
+      }
+
+      &::after {
+        content: "";
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 2rem;
+        height: 2rem;
+
+        border-radius: 100%;
+        background-color: hsl(43, 78%, 98%);
+        border: 1px solid hsl(179, 81%, 29%);
+      }
+    }
+  }
+</style>
+
+<div class={(noLine ? "noline " : "") + "md:relative md:pt-20 lg:pt-24 md:pr-[0.625rem] lg:pr-24"}>
+    <p class="flex flex-col gap-6 text-center md:gap-10 md:text-left md:max-w-[20ch]">
+      <span class="text-accent font-serif text-18 leading-none">{step}</span>
+      <span class="font-serif text-7 leading-tigher">{title}</span>
+    </p>
+    <p class="mt-6 md:mt-10 | text-center text-base-sm md:text-base md:text-left md:max-w-[35ch] lg:max-w-none">{text}</p>
+</div>
