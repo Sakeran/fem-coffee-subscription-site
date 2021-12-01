@@ -15,7 +15,7 @@
       hsla(43, 78%, 98%, 0)
     );
 
-    color: transparent;
+    color: hsla(215, 19%, 25%, 0);;
 
     transform-origin: center top;
     transform: scaleY(0);
@@ -29,11 +29,9 @@
     }
 
     &[data-visible="true"] {
-      color: hsla(215, 19%, 25%);
+      color: hsla(215, 19%, 25%, 1);
       transform: scaleY(1);
       pointer-events: all;
-
-      transition: transform 0.2s ease-in-out, color 0.4s ease-in-out 0.2s;
 
       li {
         transform: translateY(0);
