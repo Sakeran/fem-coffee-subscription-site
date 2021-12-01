@@ -37,6 +37,10 @@ module.exports = {
       half: "0.48",
     },
     extend: {
+      screens: {
+        "coffee-sm": "765px",
+        "coffee-lg": "1230px"
+      },
       backgroundImage: {
         'hero': `url("/assets/home/mobile/image-hero-coffeepress.jpg")`,
         'hero-sm': `url("/assets/home/tablet/image-hero-coffeepress.jpg")`,
