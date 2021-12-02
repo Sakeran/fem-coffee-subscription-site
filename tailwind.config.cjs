@@ -60,6 +60,9 @@ module.exports = {
         "about-quality": `url("/assets/about/mobile/bg-quality.png")`,
         "about-quality-md": `url("/assets/about/tablet/bg-quality.png")`,
         "about-quality-lg": `url("/assets/about/desktop/bg-quality.png")`,
+        "plan-hero": `url("/assets/plan/mobile/image-hero-blackcup.jpg")`,
+        "plan-hero-md": `url("/assets/plan/tablet/image-hero-blackcup.jpg")`,
+        "plan-hero-lg": `url("/assets/plan/desktop/image-hero-blackcup.jpg")`,
       },
       borderRadius: {
         10: "0.625em",
