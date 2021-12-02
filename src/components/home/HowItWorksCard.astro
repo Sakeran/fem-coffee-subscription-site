@@ -3,12 +3,28 @@ export interface Props {
   step: string;
   title: string;
   text: string;
-  noLine?: boolean
+  noLine?: boolean;
 }
 
-const {step, title, text, noLine} = Astro.props;
-
+const { step, title, text, noLine } = Astro.props;
 ---
+
+<div
+  class={(noLine ? "noline " : "") +
+    "md:relative md:pt-20 lg:pt-24 md:pr-[0.625rem] lg:pr-24"}
+>
+  <p
+    class="flex flex-col gap-6 text-center md:gap-10 md:text-left md:max-w-[20ch]"
+  >
+    <span class="text-accent font-serif text-18 leading-none">{step}</span>
+    <span class="font-serif text-7 leading-tigher">{title}</span>
+  </p>
+  <p
+    class="mt-6 md:mt-10 | text-center text-base-sm md:text-base md:text-left md:max-w-[35ch] lg:max-w-none"
+  >
+    {text}
+  </p>
+</div>
 
 <style lang="scss">
   @media (min-width: 768px) {
@@ -21,7 +37,7 @@ const {step, title, text, noLine} = Astro.props;
         left: 0;
         right: 0;
         height: 2px;
-        background-color: hsl(25, 94%, 86%); 
+        background-color: hsl(25, 94%, 86%);
       }
 
       &.noline::before {
@@ -45,11 +61,3 @@ const {step, title, text, noLine} = Astro.props;
     }
   }
 </style>
-
-<div class={(noLine ? "noline " : "") + "md:relative md:pt-20 lg:pt-24 md:pr-[0.625rem] lg:pr-24"}>
-    <p class="flex flex-col gap-6 text-center md:gap-10 md:text-left md:max-w-[20ch]">
-      <span class="text-accent font-serif text-18 leading-none">{step}</span>
-      <span class="font-serif text-7 leading-tigher">{title}</span>
-    </p>
-    <p class="mt-6 md:mt-10 | text-center text-base-sm md:text-base md:text-left md:max-w-[35ch] lg:max-w-none">{text}</p>
-</div>

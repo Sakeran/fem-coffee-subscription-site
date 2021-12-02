@@ -1,61 +1,6 @@
 ---
 ---
 
-<style lang="scss">
-  button {
-    min-width: 2rem;
-    min-height: 2rem;
-  }
-
-  ul {
-    background: #fefcf6;
-    background: linear-gradient(
-      to bottom,
-      hsl(43, 78%, 98%) 40%,
-      hsla(43, 78%, 98%, 0)
-    );
-
-    color: hsla(215, 19%, 25%, 0);;
-
-    transform-origin: center top;
-    transform: scaleY(0);
-    pointer-events: none;
-
-    transition: transform 0.2s ease-in-out, color 0.1s ease-in-out;
-
-    li {
-      transform: translateY(-2em);
-      transition: transform 0.2s ease-out 0.15s;
-    }
-
-    &[data-visible="true"] {
-      color: hsla(215, 19%, 25%, 1);
-      transform: scaleY(1);
-      pointer-events: all;
-
-      li {
-        transform: translateY(0);
-      }
-    }
-
-    @media screen and (min-width: 640px) {
-      position: static;
-
-      background: none;
-      pointer-events: all;
-      color: hsla(215, 5%, 54%);
-
-      transform: none;
-      transition: none;
-
-      li {
-        transform: none;
-        transition: none;
-      }
-    }
-  }
-</style>
-
 <header class="wrapper-large | relative">
   <div class="flex items-center justify-between | pt-8 pb-8">
     <div class="max-w-[50%]">
@@ -104,9 +49,21 @@
           items-center
         "
       >
-        <li><a class="sm:hover:text-prose sm:focus-within:text-prose transition-colors ease-in-out duration-150" href="/">Home</a></li>
-        <li><a class="sm:hover:text-prose sm:focus-within:text-prose transition-colors ease-in-out duration-150" href="/about">About Us</a></li>
-        <li><a class="sm:hover:text-prose sm:focus-within:text-prose transition-colors ease-in-out duration-150" href="/plan">Create Your Plan</a></li>
+        <li>
+          <a
+            class="sm:hover:text-prose sm:focus-within:text-prose transition-colors ease-in-out duration-150"
+            href="/">Home</a>
+        </li>
+        <li>
+          <a
+            class="sm:hover:text-prose sm:focus-within:text-prose transition-colors ease-in-out duration-150"
+            href="/about">About Us</a>
+        </li>
+        <li>
+          <a
+            class="sm:hover:text-prose sm:focus-within:text-prose transition-colors ease-in-out duration-150"
+            href="/plan">Create Your Plan</a>
+        </li>
       </ul>
     </nav>
   </div>
@@ -136,3 +93,58 @@
     );
   });
 </script>
+
+<style lang="scss">
+  button {
+    min-width: 2rem;
+    min-height: 2rem;
+  }
+
+  ul {
+    background: #fefcf6;
+    background: linear-gradient(
+      to bottom,
+      hsl(43, 78%, 98%) 40%,
+      hsla(43, 78%, 98%, 0)
+    );
+
+    color: hsla(215, 19%, 25%, 0);
+
+    transform-origin: center top;
+    transform: scaleY(0);
+    pointer-events: none;
+
+    transition: transform 0.2s ease-in-out, color 0.1s ease-in-out;
+
+    li {
+      transform: translateY(-2em);
+      transition: transform 0.2s ease-out 0.15s;
+    }
+
+    &[data-visible="true"] {
+      color: hsla(215, 19%, 25%, 1);
+      transform: scaleY(1);
+      pointer-events: all;
+
+      li {
+        transform: translateY(0);
+      }
+    }
+
+    @media screen and (min-width: 640px) {
+      position: static;
+
+      background: none;
+      pointer-events: all;
+      color: hsla(215, 5%, 54%);
+
+      transform: none;
+      transition: none;
+
+      li {
+        transform: none;
+        transition: none;
+      }
+    }
+  }
+</style>

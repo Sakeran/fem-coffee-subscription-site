@@ -6,14 +6,20 @@ export interface Props {
   alt: string;
 }
 
-const {title, description, src, alt} = Astro.props;
+const { title, description, src, alt } = Astro.props;
 ---
 
-<div class="text-center coffee-sm:text-left coffee-lg:text-center | flex flex-col coffee-sm:flex-row coffee-lg:flex-col items-center coffee-sm:justify-center coffee-sm:gap-9 coffee-lg:gap-[4.5rem]">
-  <img class="max-w-[16rem]" src={src} alt={alt}>
+<div
+  class="text-center coffee-sm:text-left coffee-lg:text-center | flex flex-col coffee-sm:flex-row coffee-lg:flex-col items-center coffee-sm:justify-center coffee-sm:gap-9 coffee-lg:gap-[4.5rem]"
+>
+  <img class="max-w-[16rem]" {src} {alt} />
 
   <div class="mt-6 sm:mt-0">
     <p class="mb-4 | text-6 font-serif">{title}</p>
-    <p class="max-w-[33ch] coffee-lg:max-w-[30ch] | text-base-sm coffee-lg:text-base">{description}</p>
+    <p
+      class="max-w-[33ch] coffee-lg:max-w-[30ch] | text-base-sm coffee-lg:text-base"
+    >
+      {description}
+    </p>
   </div>
 </div>

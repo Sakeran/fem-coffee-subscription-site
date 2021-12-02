@@ -2,55 +2,69 @@
 import Card from "./CoffeeCollectionCard.astro";
 ---
 
-<style lang="scss">
-    h2 {
-      position: relative;
-
-      &:before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background-image: linear-gradient(to top, hsl(48, 78%, 98%, 1), hsla(48, 78%, 98%, 0.01));
-      }
-    }
-</style>
-
 <section class="wrapper">
   <div>
-    <h2 class="relative z-10 | text-gray text-10 coffee-sm:text-24 coffee-lg:text-v-large leading-none font-serif font-black lowercase text-center">Our Collection</h2>
+    <h2
+      class="relative z-10 | text-gray text-10 coffee-sm:text-24 coffee-lg:text-v-large leading-none font-serif font-black lowercase text-center"
+    >
+      Our Collection
+    </h2>
 
-    <ul class="relative z-20 | mt-3 coffee-sm:-mt-8 coffee-lg:-mt-12 | flex flex-col gap-12 coffee-lg:flex-row coffee-lg:justify-center coffee-lg:gap-7">
-        <li>
-            <Card
-                title="Gran Espresso"
-                description="Light and flavorful blend with cocoa and black pepper for an intense experience"
-                src="/assets/home/desktop/image-gran-espresso.png"
-                alt="a bag of gran espresso coffee"/>
-        </li>
+    <ul
+      class="relative z-20 | mt-3 coffee-sm:-mt-8 coffee-lg:-mt-12 | flex flex-col gap-12 coffee-lg:flex-row coffee-lg:justify-center coffee-lg:gap-7"
+    >
+      <li>
+        <Card
+          title="Gran Espresso"
+          description="Light and flavorful blend with cocoa and black pepper for an intense experience"
+          src="/assets/home/desktop/image-gran-espresso.png"
+          alt="a bag of gran espresso coffee"
+        />
+      </li>
 
-        <li>
-            <Card
-                title="Planalto"
-                description="Brazilian dark roast with rich and velvety body, and hints of fruits and nuts"
-                src="/assets/home/desktop/image-planalto.png"
-                alt="a bag of planalto coffee"/>
-        </li>
+      <li>
+        <Card
+          title="Planalto"
+          description="Brazilian dark roast with rich and velvety body, and hints of fruits and nuts"
+          src="/assets/home/desktop/image-planalto.png"
+          alt="a bag of planalto coffee"
+        />
+      </li>
 
-        <li>
-            <Card
-                title="Piccollo"
-                description="Mild and smooth blend featuring notes of toasted almond and dried cherry"
-                src="/assets/home/desktop/image-piccollo.png"
-                alt="a bag of piccollo coffee"/>
-        </li>
+      <li>
+        <Card
+          title="Piccollo"
+          description="Mild and smooth blend featuring notes of toasted almond and dried cherry"
+          src="/assets/home/desktop/image-piccollo.png"
+          alt="a bag of piccollo coffee"
+        />
+      </li>
 
-        <li>
-            <Card
-                title="Danche"
-                description="Ethiopian hand-harvested blend densely packed with vibrant fruit notes"
-                src="/assets/home/desktop/image-danche.png"
-                alt="a bag of danche coffee"/>
-        </li>
+      <li>
+        <Card
+          title="Danche"
+          description="Ethiopian hand-harvested blend densely packed with vibrant fruit notes"
+          src="/assets/home/desktop/image-danche.png"
+          alt="a bag of danche coffee"
+        />
+      </li>
     </ul>
   </div>
 </section>
+
+<style lang="scss">
+  h2 {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(
+        to top,
+        hsl(48, 78%, 98%, 1),
+        hsla(48, 78%, 98%, 0.01)
+      );
+    }
+  }
+</style>
