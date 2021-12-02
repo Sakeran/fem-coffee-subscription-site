@@ -1,0 +1,16 @@
+---
+export interface Props {
+  src: string;
+  title: string;
+}
+
+const {src, title} = Astro.props;
+---
+
+<div class="flex flex-col items-center md:items-start">
+  <img src={src} alt="">
+  <h3 class="pt-12 pb-6 | text-7 lg:text-8 leading-tight font-serif font-black">{title}</h3>
+  <div class="text-center md:text-left">
+    <slot />
+  </div>
+</div>

@@ -1,1 +1,33 @@
-<p>TODO</p>
+---
+import Card from "./HeadquartersCard.astro";
+---
+
+<section class="wrapper">
+  <h2 class="text-center md:text-left text-6 leading-tight text-gray font-serif font-black">Our headquarters</h2>
+  <div class="cards | pt-18 | flex flex-col gap-20 md:flex-row md:gap-3">
+    <Card title="United Kingdom" src="/assets/about/desktop/illustration-uk.svg">
+      <p>68 Asfordby Rd</p>
+      <p>Alcaston</p>
+      <p>SY6 1YA</p>
+      <p>+44 1241 918425</p>
+    </Card>
+    <Card title="Canada" src="/assets/about/desktop/illustration-canada.svg">
+      <p>1528 Eglinton Avenue</p>
+      <p>Toronto</p>
+      <p>Ontario M4P 1A6</p>
+      <p>+1 416 485 2997</p>
+    </Card>
+    <Card title="Australia" src="/assets/about/desktop/illustration-australia.svg">
+      <p>36 Swanston Street</p>
+      <p>Kewell</p>
+      <p>Victoria</p>
+      <p>+61 4 9928 3629</p>
+    </Card>
+  </div>
+</section>
+
+<style lang="scss">
+  .cards > :global(*) {
+    flex-basis: 100%;
+  }
+</style>
