@@ -47,6 +47,7 @@ module.exports = {
         25: "6.25rem",
         30: "7.5rem",
         34: "8.5rem",
+        42: "10.5rem",
         50: "12.5rem",
       },
       backgroundImage: {
