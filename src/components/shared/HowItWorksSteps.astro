@@ -1,13 +1,23 @@
 ---
 import Card from "./HowItWorksCard.astro";
+
+export interface Props {
+  circleColor?: string;
+}
+
+let colorStyle = "";
+if (Astro.props.circleColor) {
+  colorStyle = "--hiw-circle-color: " + Astro.props.circleColor;
+}
 ---
 
-<div class="flex flex-col md:flex-row gap-14 md:gap-0">
+<div class="flex flex-col md:flex-row gap-14 md:gap-0" style={colorStyle}>
   <div class="md:w-full">
     <Card
       step="01"
       title="Pick your coffee"
       text="Select from our evolving range of artisan coffees. Our beans are ethically sourced and we pay fair prices for them. There are new coffees in all profiles every month for you to try out."
+      lineType="start"
     />
   </div>
   <div class="md:w-full">
@@ -15,6 +25,7 @@ import Card from "./HowItWorksCard.astro";
       step="02"
       title="Choose the frequency"
       text="Customize your order frequency, quantity, even your roast style and grind type. Pause, skip or cancel your subscription with no commitment through our online portal."
+      lineType="mid"
     />
   </div>
   <div class="md:w-full">
@@ -22,7 +33,7 @@ import Card from "./HowItWorksCard.astro";
       step="03"
       title="Receive and enjoy!"
       text="We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning world-class coffees curated to provide a distinct tasting experience."
-      noLine={true}
+      lineType="end"
     />
   </div>
 </div>
