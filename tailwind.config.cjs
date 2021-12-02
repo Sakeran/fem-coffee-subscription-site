@@ -9,11 +9,11 @@ module.exports = {
       prose: "hsl(215, 19%, 25%)",
       cream: "hsl(43, 78%, 98%)",
       gray: "hsl(215, 5%, 54%)",
-      disabled: "hsl(25, 11%, 87%)"
+      disabled: "hsl(25, 11%, 87%)",
     },
     fontFamily: {
-      "serif": ["Fraunces", "serif"],
-      "sans": ["Barlow", "sans"],
+      serif: ["Fraunces", "serif"],
+      sans: ["Barlow", "sans"],
     },
     fontSize: {
       3: "0.75rem",
@@ -39,23 +39,26 @@ module.exports = {
     extend: {
       screens: {
         "coffee-sm": "765px",
-        "coffee-lg": "1230px"
+        "coffee-lg": "1230px",
       },
       spacing: {
         18: "4.5rem",
         25: "6.25rem",
         30: "7.5rem",
         34: "8.5rem",
-        50: "12.5rem"
+        50: "12.5rem",
       },
       backgroundImage: {
-        'hero': `url("/assets/home/mobile/image-hero-coffeepress.jpg")`,
-        'hero-sm': `url("/assets/home/tablet/image-hero-coffeepress.jpg")`,
-        'hero-md': `url("/assets/home/desktop/image-hero-coffeepress.jpg")`,
+        hero: `url("/assets/home/mobile/image-hero-coffeepress.jpg")`,
+        "hero-sm": `url("/assets/home/tablet/image-hero-coffeepress.jpg")`,
+        "hero-md": `url("/assets/home/desktop/image-hero-coffeepress.jpg")`,
+        "about-hero": `url("/assets/about/mobile/image-hero-whitecup.jpg")`,
+        "about-hero-md": `url("/assets/about/tablet/image-hero-whitecup.jpg")`,
+        "about-hero-lg": `url("/assets/about/desktop/image-hero-whitecup.jpg")`,
       },
       borderRadius: {
-        10: "0.625em"
-      }
-    }
+        10: "0.625em",
+      },
+    },
   },
 };
