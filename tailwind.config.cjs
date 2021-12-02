@@ -43,6 +43,7 @@ module.exports = {
       },
       spacing: {
         18: "4.5rem",
+        22: "5.5rem",
         25: "6.25rem",
         30: "7.5rem",
         34: "8.5rem",
@@ -55,6 +56,9 @@ module.exports = {
         "about-hero": `url("/assets/about/mobile/image-hero-whitecup.jpg")`,
         "about-hero-md": `url("/assets/about/tablet/image-hero-whitecup.jpg")`,
         "about-hero-lg": `url("/assets/about/desktop/image-hero-whitecup.jpg")`,
+        "about-quality": `url("/assets/about/mobile/bg-quality.png")`,
+        "about-quality-md": `url("/assets/about/tablet/bg-quality.png")`,
+        "about-quality-lg": `url("/assets/about/desktop/bg-quality.png")`,
       },
       borderRadius: {
         10: "0.625em",
