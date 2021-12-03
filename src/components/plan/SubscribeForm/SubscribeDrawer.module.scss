@@ -1,0 +1,42 @@
+.disabled {
+  opacity: 0.5;
+}
+
+.icon {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  &[data-visible="true"] {
+    transform: rotate(-180deg);
+  }
+}
+
+.content {
+  display: none;
+
+  .inner {
+    opacity: 0;
+  }
+
+  &[data-visible="true"] {
+    display: block;
+    overflow: hidden;
+
+    .inner {
+      animation: slideIn 0.3s ease-out normal forwards;
+
+      @keyframes slideIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-0.5em);
+        }
+        0.01% {
+          opacity: 0;
+        }
+        
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
