@@ -3,11 +3,13 @@ module.exports = {
   purge: ["./public/**/*.html", "./src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}"],
   theme: {
     colors: {
+      white: "hsl(0, 0%, 100%)",
       primary: "hsl(179, 81%, 29%)",
       "primary-600": "hsl(179, 55%, 61%)",
       accent: "hsl(25, 94%, 86%)",
       prose: "hsl(215, 19%, 25%)",
       cream: "hsl(43, 78%, 98%)",
+      "cream-200": "hsl(43, 30%, 94%)",
       gray: "hsl(215, 5%, 54%)",
       disabled: "hsl(25, 11%, 87%)",
     },
@@ -37,6 +39,9 @@ module.exports = {
       half: "0.48",
     },
     extend: {
+      outline: {
+        primary: "2px dashed hsl(179, 81%, 29%)",
+      },
       screens: {
         "coffee-sm": "765px",
         "coffee-lg": "1230px",

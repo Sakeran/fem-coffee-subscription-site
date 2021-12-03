@@ -1,0 +1,92 @@
+[
+  {
+    "id": "drink-type",
+    "title": "How do you drink your coffee?",
+    "options": [
+      {
+        "label": "Capsule",
+        "text": "Compatible with Nespresso systems and similar brewers"
+      },
+      {
+        "label": "Filter",
+        "text": "For pour over or drip methods like Aeropress, Chemex, and V60"
+      },
+      {
+        "label": "Espresso",
+        "text": "Dense and finely ground beans for an intense, flavorful experiences"
+      }
+    ]
+  },
+  {
+    "id": "coffee-type",
+    "title": "What type of coffee?",
+    "options": [
+      {
+        "label": "Single Origin",
+        "text": "Distinct, high quality coffee from a specific family-owned farm"
+      },
+      {
+        "label": "Decaf",
+        "text": "Just like regular coffee, except the caffeine has been removed"
+      },
+      {
+        "label": "Blended",
+        "text": "Combination of two or three dark roasted beans of organic coffees"
+      }
+    ]
+  },
+  {
+    "id": "weight",
+    "title": "How much would you like?",
+    "options": [
+      {
+        "label": "250g",
+        "text": "Perfect for the solo drinker. Yields about 12 delicious cups."
+      },
+      {
+        "label": "500g",
+        "text": "Perfect option for a couple. Yields about 40 delectable cups."
+      },
+      {
+        "label": "1000g",
+        "text": "Perfect for offices and events. Yields about 90 delightful cups."
+      }
+    ]
+  },
+  {
+    "id": "grind-type",
+    "title": "Want us to grind them?",
+    "options": [
+      {
+        "label": "Wholebean",
+        "text": "Best choice if you cherish the full sensory experience"
+      },
+      {
+        "label": "Filter",
+        "text": "For drip or pour-over coffee methods such as V60 or Aeropress"
+      },
+      {
+        "label": "Cafetiére",
+        "text": "Course ground beans specially suited for french press coffee"
+      }
+    ]
+  },
+  {
+    "id": "frequency",
+    "title": "How often should we deliver?",
+    "options": [
+      {
+        "label": "Every week",
+        "text": "$7.20 per shipment. Includes free first-class shipping."
+      },
+      {
+        "label": "Every 2 weeks",
+        "text": "$9.60 per shipment. Includes free priority shipping."
+      },
+      {
+        "label": "Every month",
+        "text": "$12.00 per shipment. Includes free priority shipping."
+      }
+    ]
+  }
+]

@@ -1,24 +1,15 @@
 import { Component } from "solid-js";
 
+import formData from "./formData.json";
+
 import { SubscribeDrawer } from "./SubscribeDrawer";
+import { OptionGroup } from "./OptionGroup";
 
 export const SubscribeForm: Component = () => {
   return (
     <section>
-      <SubscribeDrawer id="drink-type" title="How do you drink your coffee?">
-        <p>TODO</p>
-      </SubscribeDrawer>
-
-      <SubscribeDrawer id="coffee-type" title="What type of coffee?">
-        <p>TODO</p>
-      </SubscribeDrawer>
-
-      <SubscribeDrawer id="weight" title="How much would you like?">
-        <p>TODO</p>
-      </SubscribeDrawer>
-      
-      <SubscribeDrawer id="weight" title="Want us to grind them?">
-        <p>TODO</p>
+      <SubscribeDrawer id={formData[0].id} title={formData[0].title}>
+        <OptionGroup {...formData[0]}></OptionGroup>
       </SubscribeDrawer>
     </section>
   );
