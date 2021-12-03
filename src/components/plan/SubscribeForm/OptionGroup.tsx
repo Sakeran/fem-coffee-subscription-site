@@ -22,9 +22,12 @@ const Option: Component<{
       aria-checked={option.isSelected}
       aria-labelledby={labelID}
       data-option-idx={option.idx}
-      class={`${bg()} p-6 rounded-lg transition-colors cursor-pointer`}
+      class={`${bg()} p-6 w-full rounded-lg transition-colors cursor-pointer`}
     >
-      <label id={labelID} class="block text-6 font-serif font-black leading-tight">
+      <label
+        id={labelID}
+        class="block text-6 font-serif font-black leading-tight"
+      >
         {option.data.label}
       </label>
       <p class="mt-2">{option.data.text}</p>
@@ -119,9 +122,9 @@ export const OptionGroup: Component<{
 
   return (
     <div
+      class="flex flex-col gap-4 md:flex-row md:gap-2 lg:gap-6"
       aria-label={props.title}
       role="radiogroup"
-      class="space-y-4"
       onKeyDown={handleKeyDown}
       onClick={handleClick}
     >
