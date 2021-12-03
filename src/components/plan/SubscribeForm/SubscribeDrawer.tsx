@@ -14,18 +14,33 @@ export const SubscribeDrawer: Component<{
 
   const onToggle = () => {
     if (props.disabled) return;
-    setExpanded(exp => !exp);
+    setExpanded((exp) => !exp);
   };
 
+  const handleEscape = (e: KeyboardEvent) => {
+    if (e.key !== "Esc" && e.key !== "Escape") return;
+
+    e.preventDefault();
+    setExpanded(false);
+    document.getElementById(`option-${props.id}-toggle`).focus();
+  }
+
   return (
-    <div id={`option-${props.id}`} classList={{[Styles.disabled]: props.disabled}}>
+    <div
+      id={`option-${props.id}`}
+      classList={{ [Styles.disabled]: props.disabled }}
+      onKeyDown={handleEscape}
+      >
       <button
-        class="w-full flex justify-between items-center"
+        id={`option-${props.id}-toggle`}
+        class="w-full flex justify-between items-center text-gray focus-within:text-prose outline-none"
         aria-expanded={expanded()}
         aria-controls={`option-${props.id}-content`}
         onClick={onToggle}
       >
-        <span class="text-gray text-6 font-serif font-black leading-tigher text-left">{props.title}</span>{" "}
+        <span class="text-6 font-serif font-black leading-tigher text-left transition-colors">
+          {props.title}
+        </span>{" "}
         <span class={Styles.icon} data-visible={expanded()}>
           <img
             class="option-drawer-icon"
@@ -39,7 +54,9 @@ export const SubscribeDrawer: Component<{
         data-visible={isExpanded()}
         class={Styles.content}
       >
-        <div class={Styles.inner}>{props.children}</div>
+        <div class={Styles.inner}>
+          <div class="pt-8">{props.children}</div>
+        </div>
       </div>
     </div>
   );
