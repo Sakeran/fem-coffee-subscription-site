@@ -55,7 +55,7 @@ export const SubscribeDrawer: Component<{
         class={Styles.content}
       >
         <div class={Styles.inner}>
-          <div class="pt-8">{props.children}</div>
+          <div class="pt-8 md:pt-10 lg:pt-14">{props.children}</div>
         </div>
       </div>
     </div>
