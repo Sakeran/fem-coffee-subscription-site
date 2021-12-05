@@ -1,6 +1,5 @@
-[
-  {
-    "id": "drink-type",
+{
+  "method": {
     "title": "How do you drink your coffee?",
     "options": [
       {
@@ -17,8 +16,7 @@
       }
     ]
   },
-  {
-    "id": "coffee-type",
+  "coffee": {
     "title": "What type of coffee?",
     "options": [
       {
@@ -35,8 +33,7 @@
       }
     ]
   },
-  {
-    "id": "weight",
+  "weight": {
     "title": "How much would you like?",
     "options": [
       {
@@ -53,8 +50,7 @@
       }
     ]
   },
-  {
-    "id": "grind-type",
+  "grind": {
     "title": "Want us to grind them?",
     "options": [
       {
@@ -71,8 +67,7 @@
       }
     ]
   },
-  {
-    "id": "frequency",
+  "frequency": {
     "title": "How often should we deliver?",
     "options": [
       {
@@ -89,4 +84,4 @@
       }
     ]
   }
-]
+}
