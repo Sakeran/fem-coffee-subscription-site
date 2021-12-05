@@ -10,6 +10,8 @@ export const SubscribeDrawer: Component<{
 }> = (props) => {
   const [expanded, setExpanded] = createSignal(false);
 
+  let toggleRef: HTMLButtonElement;
+
   const isExpanded = () => expanded() && !props.disabled;
 
   const onToggle = () => {
@@ -22,21 +24,22 @@ export const SubscribeDrawer: Component<{
 
     e.preventDefault();
     setExpanded(false);
-    document.getElementById(`option-${props.id}-toggle`).focus();
+    toggleRef.focus();
   }
 
   return (
     <div
-      id={`option-${props.id}`}
+      id={props.id}
       classList={{ [Styles.disabled]: props.disabled }}
       onKeyDown={handleEscape}
       >
       <button
-        id={`option-${props.id}-toggle`}
+        id={`${props.id}-toggle`}
         class="w-full flex justify-between items-center text-gray focus-within:text-prose outline-none"
         aria-expanded={expanded()}
-        aria-controls={`option-${props.id}-content`}
+        aria-controls={`${props.id}-content`}
         onClick={onToggle}
+        ref={toggleRef}
       >
         <span class="text-6 font-serif font-black leading-tigher text-left transition-colors">
           {props.title}
@@ -50,7 +53,7 @@ export const SubscribeDrawer: Component<{
         </span>
       </button>
       <div
-        id={`option-${props.id}-content`}
+        id={`${props.id}-content`}
         data-visible={isExpanded()}
         class={Styles.content}
       >
