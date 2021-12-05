@@ -26,7 +26,7 @@ const Option: Component<{
     >
       <label
         id={labelID}
-        class="block text-6 font-serif font-black leading-tight"
+        class="block text-6 font-serif font-black leading-tight cursor-pointer"
       >
         {option.data.label}
       </label>
