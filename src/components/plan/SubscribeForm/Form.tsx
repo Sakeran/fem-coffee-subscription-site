@@ -8,6 +8,7 @@ import {
   setOptionValue,
   revealOption,
   isCapsuleMethod,
+  getFrequencyOptions,
 } from "./formState";
 
 export const Form: Component = () => {
@@ -101,7 +102,7 @@ export const Form: Component = () => {
           id="frequency"
           title={formState.frequency.optionTitle}
           currentValue={formState.frequency.currentValue}
-          options={formState.frequency.options}
+          options={getFrequencyOptions()}
           onSelect={(v) => setOptionValue("frequency", v)}
         />
       </Drawer>

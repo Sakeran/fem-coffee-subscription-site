@@ -72,15 +72,15 @@
     "options": [
       {
         "label": "Every week",
-        "text": "$7.20 per shipment. Includes free first-class shipping."
+        "text": " per shipment. Includes free first-class shipping."
       },
       {
         "label": "Every 2 weeks",
-        "text": "$9.60 per shipment. Includes free priority shipping."
+        "text": " per shipment. Includes free priority shipping."
       },
       {
         "label": "Every month",
-        "text": "$12.00 per shipment. Includes free priority shipping."
+        "text": " per shipment. Includes free priority shipping."
       }
     ]
   }
