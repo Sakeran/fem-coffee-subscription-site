@@ -1,16 +1,9 @@
 import { Component, onMount } from "solid-js";
 import { Portal } from "solid-js/web";
 
-import {
-  formState,
-  isCapsuleMethod,
-  revealOption,
-  setOptionValue,
-} from "./formState";
+import { revealOption } from "./formState";
 
-import { Drawer } from "./Drawer";
-import { OptionGroup } from "./OptionGroup";
-
+import { Form } from "./Form";
 import { OptionSelector } from "./OptionSelector";
 
 export const SubscribeForm: Component = () => {
@@ -19,105 +12,14 @@ export const SubscribeForm: Component = () => {
     revealOption("method");
   });
 
-  const focusOnOptions = (id: string) => {
-    const target: HTMLDivElement | undefined = document.querySelector(
-      `#${id}-options > *:first-child`
-    );
-    if (target) {
-      target.scrollIntoView();
-      target.focus();   
-    }
-  };
-
   return (
     <section>
       <div class="wrapper | lg:grid lg:grid-cols-12 lg:gap-16">
         <div class="hidden lg:block lg:col-span-3">
-          <OptionSelector formState={formState} />
+          <OptionSelector />
         </div>
-        <div class="flex flex-col gap-24 md:gap-25 lg:gap-22 lg:col-span-8 lg:col-start-5">
-          <Drawer
-            title={formState.method.optionTitle}
-            expanded={formState.method.isRevealed}
-          >
-            <OptionGroup
-              id="method"
-              title={formState.method.optionTitle}
-              currentValue={formState.method.currentValue}
-              options={formState.method.options}
-              onSelect={(v) => {
-                setOptionValue("method", v);
-                revealOption("coffee");
-                focusOnOptions("coffee");
-              }}
-              />
-          </Drawer>
-          <Drawer
-            title={formState.coffee.optionTitle}
-            expanded={formState.coffee.isRevealed}
-            >
-            <OptionGroup
-              id="coffee"
-              title={formState.coffee.optionTitle}
-              currentValue={formState.coffee.currentValue}
-              options={formState.coffee.options}
-              onSelect={(v) => {
-                setOptionValue("coffee", v);
-                revealOption("weight");
-                focusOnOptions("weight");
-              }}
-            />
-          </Drawer>
-          <Drawer
-            title={formState.weight.optionTitle}
-            expanded={formState.weight.isRevealed}
-          >
-            <OptionGroup
-              id="weight"
-              title={formState.weight.optionTitle}
-              currentValue={formState.weight.currentValue}
-              options={formState.weight.options}
-              onSelect={(v) => {
-                setOptionValue("weight", v);
-                revealOption("grind");
-                if (isCapsuleMethod()) {
-                  revealOption("frequency");
-                  focusOnOptions("frequency");
-                } else {
-                  focusOnOptions("grind");
-                }
-              }}
-            />
-          </Drawer>
-          <Drawer
-            title={formState.grind.optionTitle}
-            disabled={isCapsuleMethod()}
-            expanded={formState.grind.isRevealed}
-          >
-            <OptionGroup
-              id="grind"
-              title={formState.grind.optionTitle}
-              currentValue={formState.grind.currentValue}
-              options={formState.grind.options}
-              onSelect={(v) => {
-                setOptionValue("grind", v);
-                revealOption("frequency");
-                focusOnOptions("frequency");
-              }}
-            />
-          </Drawer>
-          <Drawer
-            title={formState.frequency.optionTitle}
-            expanded={formState.frequency.isRevealed}
-          >
-            <OptionGroup
-              id="frequency"
-              title={formState.frequency.optionTitle}
-              currentValue={formState.frequency.currentValue}
-              options={formState.frequency.options}
-              onSelect={v => setOptionValue("frequency", v)}
-            />
-          </Drawer>
+        <div class="lg:gap-22 lg:col-span-8 lg:col-start-5">
+          <Form />
         </div>
       </div>
       <Portal children>

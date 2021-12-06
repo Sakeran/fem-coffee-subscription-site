@@ -1,11 +1,9 @@
 import { Component } from "solid-js";
 
-import { Store } from "solid-js/store";
 import {
   allOptionsHaveValues,
   FieldID,
   formState,
-  IOptionState,
   isCapsuleMethod,
   optionHasValue,
   revealOption,
@@ -53,9 +51,7 @@ const OptionSelectorLabel: Component<{
   );
 };
 
-export const OptionSelector: Component<{
-  formState: Store<Record<FieldID, IOptionState>>;
-}> = (props) => {
+export const OptionSelector: Component = (props) => {
   const handleClick = (id: FieldID) => () => {
     revealOption(id);
     const target: HTMLDivElement | undefined = document.querySelector(
@@ -63,7 +59,7 @@ export const OptionSelector: Component<{
     );
     if (target) {
       target.scrollIntoView();
-      target.focus();
+      target.focus({preventScroll: true});
     }
   };
 
