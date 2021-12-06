@@ -3,10 +3,9 @@ import { Portal } from "solid-js/web";
 
 import {
   formState,
-  setFormState,
+  isCapsuleMethod,
   revealOption,
   setOptionValue,
-  FieldID,
 } from "./formState";
 
 import { Drawer } from "./Drawer";
@@ -81,7 +80,7 @@ export const SubscribeForm: Component = () => {
               onSelect={(v) => {
                 setOptionValue("weight", v);
                 revealOption("grind");
-                if (formState.method.currentValue == "Capsule") {
+                if (isCapsuleMethod()) {
                   revealOption("frequency");
                   focusOnOptions("frequency");
                 } else {
@@ -92,7 +91,7 @@ export const SubscribeForm: Component = () => {
           </Drawer>
           <Drawer
             title={formState.grind.optionTitle}
-            disabled={formState.method.currentValue === "Capsule"}
+            disabled={isCapsuleMethod()}
             expanded={formState.grind.isRevealed}
           >
             <OptionGroup

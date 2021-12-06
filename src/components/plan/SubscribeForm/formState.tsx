@@ -34,30 +34,25 @@ export const [formState, setFormState] = createStore(initialState);
 // Getters
 ////////////////////
 
+// Returns the current value of the field.
 export const getOptionValue = (id: FieldID) => {
   return formState[id].currentValue;
 }
 
-// Getter for determining the next "active" field
-// A field is active if it is not disabled, and all previous options
-// have valid values.
-const fieldOrder: FieldID[] = ["method", "coffee", "weight", "grind", "frequency"];
-export const activeField = () => {
+// Returns true if the given field has a set value.
+export const optionHasValue = (id: FieldID) => {
+  return !!getOptionValue(id);
+}
 
-  const isFieldActive = (id: FieldID) => {
-    for (const field of fieldOrder) {
-      if (id === field) break;
-      if (getOptionValue(field) !== undefined) return false;
-    }
+// Returns true if all of the given fields have set values
+// (For use by the OptionSelector component to determine the correct stage)
+export const allOptionsHaveValues = (...ids: FieldID[]) => {
+  return ids.reduce((res, id) => res && optionHasValue(id), true);
+}
 
-    return true;
-  }
-
-  for (const field of fieldOrder) {
-    if (isFieldActive(field)) return field;
-  }
-
-  return "frequency";
+// Returns true if "Capsule" is selected as the method.
+export const isCapsuleMethod = () => {
+  return getOptionValue("method") === "Capsule";
 }
 
 ////////////////////

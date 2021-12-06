@@ -1,7 +1,15 @@
 import { Component } from "solid-js";
 
 import { Store } from "solid-js/store";
-import { FieldID, formState, IOptionState, revealOption } from "./formState";
+import {
+  allOptionsHaveValues,
+  FieldID,
+  formState,
+  IOptionState,
+  isCapsuleMethod,
+  optionHasValue,
+  revealOption,
+} from "./formState";
 
 const OptionSelectorLabel: Component<{
   id: string;
@@ -50,12 +58,14 @@ export const OptionSelector: Component<{
 }> = (props) => {
   const handleClick = (id: FieldID) => () => {
     revealOption(id);
-    const target: HTMLDivElement | undefined = document.querySelector(`#${id}-options > *:first-child`);
+    const target: HTMLDivElement | undefined = document.querySelector(
+      `#${id}-options > *:first-child`
+    );
     if (target) {
       target.scrollIntoView();
       target.focus();
     }
-  }
+  };
 
   return (
     <ul class="sticky top-6 left-0 | text-6 font-serif font-black leading-tight">
@@ -65,7 +75,7 @@ export const OptionSelector: Component<{
         labelColor="text-primary"
         onClick={handleClick("method")}
         border
-        opacity={props.formState.method.currentValue ? 40 : 100}
+        opacity={optionHasValue("method") ? 40 : 100}
       />
       <OptionSelectorLabel
         id="02"
@@ -73,10 +83,7 @@ export const OptionSelector: Component<{
         onClick={handleClick("coffee")}
         border
         opacity={
-          props.formState.method.currentValue &&
-          !props.formState.coffee.currentValue
-            ? 100
-            : 40
+          allOptionsHaveValues("method") && !optionHasValue("coffee") ? 100 : 40
         }
       />
       <OptionSelectorLabel
@@ -85,9 +92,7 @@ export const OptionSelector: Component<{
         onClick={handleClick("weight")}
         border
         opacity={
-          props.formState.method.currentValue &&
-          props.formState.coffee.currentValue &&
-          !props.formState.weight.currentValue
+          allOptionsHaveValues("method", "coffee") && !optionHasValue("weight")
             ? 100
             : 40
         }
@@ -99,12 +104,10 @@ export const OptionSelector: Component<{
         onClick={handleClick("grind")}
         border
         opacity={
-          props.formState.method.currentValue == "Capsule"
+          isCapsuleMethod()
             ? 25
-            : props.formState.method.currentValue &&
-              props.formState.coffee.currentValue &&
-              props.formState.weight.currentValue &&
-              !props.formState.grind.currentValue
+            : allOptionsHaveValues("method", "coffee", "weight") &&
+              !optionHasValue("grind")
             ? 100
             : 40
         }
@@ -114,11 +117,8 @@ export const OptionSelector: Component<{
         text="Deliveries"
         onClick={handleClick("frequency")}
         opacity={
-          props.formState.method.currentValue &&
-          props.formState.coffee.currentValue &&
-          props.formState.weight.currentValue &&
-          (props.formState.grind.currentValue ||
-            props.formState.method.currentValue == "Capsule")
+          allOptionsHaveValues("method", "coffee", "weight") &&
+          (optionHasValue("grind") || isCapsuleMethod())
             ? 100
             : 40
         }
