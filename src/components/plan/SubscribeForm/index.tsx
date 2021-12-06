@@ -1,11 +1,12 @@
 import { Component, onMount } from "solid-js";
 import { Portal } from "solid-js/web";
 
-import { revealOption } from "./formState";
+import { formCompleted, revealOption } from "./formState";
 
 import { Form } from "./Form";
 import { OptionSelector } from "./OptionSelector";
 import { Summary } from "./Summary";
+import { Button } from "../../shared/Button";
 
 export const SubscribeForm: Component = () => {
   onMount(() => {
@@ -24,6 +25,9 @@ export const SubscribeForm: Component = () => {
           <Form />
           <div class="mt-30 md: md:mt-35 lg:mt-22">
             <Summary />
+          </div>
+          <div class="mt-14 | flex justify-center lg:justify-end">
+            <Button disabled={!formCompleted()}>Create my plan!</Button>
           </div>
         </div>
       </div>
