@@ -69,31 +69,6 @@
   </div>
 </header>
 
-<!-- Note: Current version of Astro (v0.21) breaks the 'hoist' keyword,
-     hence the use of "defer" instead. -->
-<script defer>
-  const nav = document.getElementById("primary-navigation");
-
-  const toggle = document.getElementById("primary-nav-toggle");
-  const hamburger = document.getElementById("primary-nav-toggle-hamburger");
-  const close = document.getElementById("primary-nav-toggle-close");
-
-  toggle.addEventListener("click", () => {
-    toggle.setAttribute(
-      "aria-expanded",
-      nav.getAttribute("aria-expanded") == "true" ? "false" : "true"
-    );
-
-    hamburger.classList.toggle("hidden");
-    close.classList.toggle("hidden");
-
-    nav.setAttribute(
-      "data-visible",
-      nav.getAttribute("data-visible") == "true" ? "false" : "true"
-    );
-  });
-</script>
-
 <style lang="scss">
   button {
     min-width: 2rem;
