@@ -10,6 +10,7 @@ import {
   isCapsuleMethod,
   getFrequencyOptions,
   FieldID,
+  getOptionValue,
 } from "./formState";
 
 export const Form: Component = () => {
@@ -31,6 +32,33 @@ export const Form: Component = () => {
     }
   };
 
+  const focusOnNext = (clicked) => {
+    if (!getOptionValue("method")) {
+      return focusOnOptions("method", clicked);
+    }
+
+    if (!getOptionValue("coffee")) {
+      return focusOnOptions("coffee", clicked);
+    }
+
+    if (!getOptionValue("weight")) {
+      return focusOnOptions("weight", clicked);
+    }
+
+    if (!getOptionValue("grind") && !isCapsuleMethod()) {
+      return focusOnOptions("grind", clicked);
+    }
+    
+    if (!getOptionValue("frequency")) {
+      return focusOnOptions("frequency", clicked);
+    }
+
+    if (!clicked) {
+      const submit = document.getElementById("create-plan");
+      if (submit) submit.focus();
+    }
+  };
+
   return (
     <div class="flex flex-col gap-24 md:gap-25">
       <Drawer
@@ -44,7 +72,7 @@ export const Form: Component = () => {
           options={formState.method.options}
           onSelect={(v, isClicked) => {
             setOptionValue("method", v);
-            focusOnOptions("coffee", isClicked);
+            focusOnNext(isClicked);
           }}
         />
       </Drawer>
@@ -59,7 +87,7 @@ export const Form: Component = () => {
           options={formState.coffee.options}
           onSelect={(v, isClicked) => {
             setOptionValue("coffee", v);
-            focusOnOptions("weight", isClicked);
+            focusOnNext(isClicked);
           }}
         />
       </Drawer>
@@ -74,12 +102,7 @@ export const Form: Component = () => {
           options={formState.weight.options}
           onSelect={(v, isClicked) => {
             setOptionValue("weight", v);
-            revealOption("grind");
-            if (isCapsuleMethod()) {
-              focusOnOptions("frequency", isClicked);
-            } else {
-              focusOnOptions("grind", isClicked);
-            }
+            focusOnNext(isClicked);
           }}
         />
       </Drawer>
@@ -95,7 +118,7 @@ export const Form: Component = () => {
           options={formState.grind.options}
           onSelect={(v, isClicked) => {
             setOptionValue("grind", v);
-            focusOnOptions("frequency", isClicked);
+            focusOnNext(isClicked);
           }}
         />
       </Drawer>
@@ -110,10 +133,7 @@ export const Form: Component = () => {
           options={getFrequencyOptions()}
           onSelect={(v, isClicked) => {
             setOptionValue("frequency", v);
-            if (!isClicked) {
-              const submit = document.getElementById("create-plan");
-              if (submit) submit.focus();
-            }
+            focusOnNext(isClicked);
           }}
         />
       </Drawer>
