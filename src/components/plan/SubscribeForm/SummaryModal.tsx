@@ -5,8 +5,6 @@ import { SummaryPhrase } from "./SummaryPhrase";
 import { Button } from "../../shared/Button";
 import { getMonthlyCost } from "./formState";
 
-//pointer-events-none hidden
-
 export const SummaryModal: Component<{
   visible: boolean;
   onClose: () => void;
