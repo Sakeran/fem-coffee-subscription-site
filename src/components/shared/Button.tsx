@@ -13,8 +13,8 @@ text-cream text-base-lg
 font-serif
 text-center
 hover:bg-primary-600
-focus-within:bg-primary-600
-focus-within:outline-primary
+focus-visible:bg-primary-600
+focus-visible:outline-primary
 |
 transition-colors
 ease-in-out

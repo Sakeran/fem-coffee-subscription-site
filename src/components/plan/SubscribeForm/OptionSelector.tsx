@@ -39,7 +39,7 @@ const OptionSelectorLabel: Component<{
         disabled={props.disabled}
         class={`${getOpacity(
           props.opacity
-        )} hover:opacity-60 focus-within:opacity-60 transition-opacity`}
+        )} hover:opacity-60 focus-visible:opacity-60 transition-opacity`}
         onClick={props.onClick}
       >
         <span class={`${props.labelColor || ""} inline-block mr-6`}>

@@ -8,9 +8,9 @@ export const Option: Component<{
 }> = (props) => {
   const bg = () => {
     if (props.isSelected) {
-      return "bg-primary text-white focus-within:outline-primary";
+      return "bg-primary text-white focus-visible:outline-primary";
     }
-    return "bg-cream-200 hover:bg-accent focus-within:bg-accent outline-none";
+    return "bg-cream-200 hover:bg-accent focus-visible:bg-accent outline-none";
   };
 
   const labelID = `${props.group}-${props.data.label}`;

@@ -13,7 +13,7 @@ export const Drawer: Component<{
 
   return (
     <div classList={{ [Styles.disabled]: props.disabled }}>
-      <div class="w-full flex justify-between items-center text-gray focus-within:text-prose outline-none">
+      <div class="w-full flex justify-between items-center text-gray focus-visible:text-prose outline-none">
         <span class="text-6 font-serif font-black leading-tigher text-left transition-colors">
           {props.title}
         </span>{" "}
