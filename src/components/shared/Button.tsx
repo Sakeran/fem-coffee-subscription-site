@@ -14,6 +14,7 @@ font-serif
 text-center
 hover:bg-primary-600
 focus-within:bg-primary-600
+focus-within:outline-primary
 |
 transition-colors
 ease-in-out
@@ -28,11 +29,14 @@ type ButtonProps = {
 
   // Link Props
   href?: string;
+
+  // id
+  id?: string;
 };
 
 const AsButton: Component<ButtonProps> = (props: ButtonProps) => {
   return (
-    <button class={classes} onClick={props.onClick} disabled={props.disabled}>
+    <button id={props.id} class={classes} onClick={props.onClick} disabled={props.disabled}>
       {props.children}
     </button>
   );
@@ -40,7 +44,7 @@ const AsButton: Component<ButtonProps> = (props: ButtonProps) => {
 
 const AsLink: Component<ButtonProps> = (props: ButtonProps) => {
   return (
-    <a class={classes} href={props.href || "#"}>
+    <a id={props.id} class={classes} href={props.href || "#"}>
       {props.children}
     </a>
   );

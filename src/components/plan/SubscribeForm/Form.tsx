@@ -9,16 +9,18 @@ import {
   revealOption,
   isCapsuleMethod,
   getFrequencyOptions,
+  FieldID,
 } from "./formState";
 
 export const Form: Component = () => {
-  const focusOnOptions = (id: string) => {
+  const focusOnOptions = (id: FieldID) => {
+    revealOption(id);
     const target: HTMLDivElement | undefined = document.querySelector(
       `#${id}-options > *:first-child`
     );
     if (target) {
       target.scrollIntoView();
-      target.focus({preventScroll: true});
+      target.focus({ preventScroll: true });
     }
   };
 
@@ -35,7 +37,6 @@ export const Form: Component = () => {
           options={formState.method.options}
           onSelect={(v) => {
             setOptionValue("method", v);
-            revealOption("coffee");
             focusOnOptions("coffee");
           }}
         />
@@ -51,7 +52,6 @@ export const Form: Component = () => {
           options={formState.coffee.options}
           onSelect={(v) => {
             setOptionValue("coffee", v);
-            revealOption("weight");
             focusOnOptions("weight");
           }}
         />
@@ -69,7 +69,6 @@ export const Form: Component = () => {
             setOptionValue("weight", v);
             revealOption("grind");
             if (isCapsuleMethod()) {
-              revealOption("frequency");
               focusOnOptions("frequency");
             } else {
               focusOnOptions("grind");
@@ -89,7 +88,6 @@ export const Form: Component = () => {
           options={formState.grind.options}
           onSelect={(v) => {
             setOptionValue("grind", v);
-            revealOption("frequency");
             focusOnOptions("frequency");
           }}
         />

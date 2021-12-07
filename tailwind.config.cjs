@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     colors: {
       white: "hsl(0, 0%, 100%)",
+      black: "hsl(0, 0%, 0%)",
       primary: "hsl(179, 81%, 29%)",
       "primary-600": "hsl(179, 55%, 61%)",
       accent: "hsl(25, 94%, 86%)",
@@ -64,6 +65,7 @@ module.exports = {
         "steps-md": `url("/assets/plan/tablet/bg-steps.png")`,
         "steps-lg": `url("/assets/plan/desktop/bg-steps.png")`,
         summary: `url("/assets/plan/mobile/bg-order-summary.png")`,
+        modal: `url("/assets/plan/desktop/bg-modal-top.png")`,
         "summary-lg": `url("/assets/plan/desktop/bg-order-summary.png")`,
         "about-hero": `url("/assets/about/mobile/image-hero-whitecup.jpg")`,
         "about-hero-md": `url("/assets/about/tablet/image-hero-whitecup.jpg")`,

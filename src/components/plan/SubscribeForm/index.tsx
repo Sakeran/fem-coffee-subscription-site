@@ -1,4 +1,4 @@
-import { Component, onMount } from "solid-js";
+import { Component, createSignal, onMount } from "solid-js";
 import { Portal } from "solid-js/web";
 
 import { formCompleted, revealOption } from "./formState";
@@ -7,8 +7,11 @@ import { Form } from "./Form";
 import { OptionSelector } from "./OptionSelector";
 import { Summary } from "./Summary";
 import { Button } from "../../shared/Button";
+import { SummaryModal } from "./SummaryModal";
 
 export const SubscribeForm: Component = () => {
+  const [modalVisible, setModalVisible] = createSignal(false);
+
   onMount(() => {
     // "method" is expanded by default
     revealOption("method");
@@ -27,14 +30,24 @@ export const SubscribeForm: Component = () => {
             <Summary />
           </div>
           <div class="mt-14 | flex justify-center lg:justify-end">
-            <Button disabled={!formCompleted()}>Create my plan!</Button>
+            <Button
+              id="create-plan"
+              disabled={!formCompleted()}
+              onClick={() => {
+                setModalVisible(true);
+                const modal = document.getElementById("order-summary");
+                if (modal) {
+                  modal.focus();
+                }
+              }}
+            >
+              Create my plan!
+            </Button>
           </div>
         </div>
       </div>
       <Portal children>
-        <div class="z-50 fixed top-0 right-0 bottom-0 left-0 pointer-events-none hidden">
-          PORTAL
-        </div>
+        <SummaryModal visible={modalVisible()} onClose={() => setModalVisible(false)} />
       </Portal>
     </section>
   );
