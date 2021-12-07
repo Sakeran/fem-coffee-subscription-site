@@ -3,6 +3,7 @@ import { Component } from "solid-js";
 import { SummaryPhrase } from "./SummaryPhrase";
 
 import { Button } from "../../shared/Button";
+import { getMonthlyCost } from "./formState";
 
 //pointer-events-none hidden
 
@@ -73,13 +74,13 @@ export const SummaryModal: Component<{
               </p>
               {/* Price+Button for tablet and up */}
               <div class="hidden md:flex md:items-center md:gap-3">
-                <p class="text-8 font-serif font-black">$14.00/mo</p>
+                <p class="text-8 font-serif font-black">{getMonthlyCost()}/mo</p>
                 <Button onClick={close}>Checkout</Button>
               </div>
               {/* Combined button for mobile */}
               <div class="max-w-max mx-auto md:hidden">
                 <Button>
-                  <span class="mx-4">Checkout - $14.00/mo</span>
+                  <span class="mx-4">Checkout - {getMonthlyCost()}/mo</span>
                 </Button>
               </div>
             </div>

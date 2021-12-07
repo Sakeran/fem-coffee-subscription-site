@@ -106,6 +106,7 @@ const frequencyCosts = {
   },
 };
 
+
 // Gets the parameterized set of options for the Frequency group,
 // depending on the weight.
 export const getFrequencyOptions = () => {
@@ -120,3 +121,23 @@ export const getFrequencyOptions = () => {
     return { label, text: newText };
   });
 };
+
+const calculateMonthlyCost = (weight: string, frequency: string) => {
+  const error = "$00.00";
+
+  if (!weight || !frequency) return error;
+
+  const weightOpts = frequencyCosts[weight];
+  if (!weightOpts) return error;
+
+  const val: string = weightOpts[frequency];
+  if (!val) return error;
+
+  const monthly = parseFloat(val) * 4;
+
+  return `$${monthly.toFixed(2)}`;
+};
+
+export const getMonthlyCost = () => {
+  return calculateMonthlyCost(getOptionValue("weight"), getOptionValue("frequency"));
+}
