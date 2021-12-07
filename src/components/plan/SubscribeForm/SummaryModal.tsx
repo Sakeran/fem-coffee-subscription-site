@@ -57,7 +57,7 @@ export const SummaryModal: Component<{
   };
 
   return (
-    <div class={outerStyles()} onKeyDown={handleCapture} onClick={handleClick}>
+    <div role="dialog" aria-labelledby="order-summary" class={outerStyles()} onKeyDown={handleCapture} onClick={handleClick}>
       <div class="absolute top-0 bottom-0 left-0 right-0 bg-black/50 | flex items-center">
         <div class="wrapper">
           <div
