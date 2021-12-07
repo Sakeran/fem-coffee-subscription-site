@@ -35,26 +35,36 @@ type ButtonProps = {
 };
 
 const AsButton: Component<ButtonProps> = (props: ButtonProps) => {
-  return (
-    <button id={props.id} class={classes} onClick={props.onClick} disabled={props.disabled}>
-      {props.children}
-    </button>
-  );
+  const buttonProps: () => Record<string, unknown> = () => {
+    const res: Record<string, unknown> = {
+      class: classes,
+    };
+    if (props.id) res.id = props.id;
+    if (props.onClick) res.onClick = props.onClick;
+    if (props.disabled) res.disabled = props.disabled;
+
+    return res;
+  };
+  return <button {...buttonProps()}>{props.children}</button>;
 };
 
 const AsLink: Component<ButtonProps> = (props: ButtonProps) => {
+  const linkProps: () => Record<string, unknown> = () => {
+    const res: Record<string, unknown> = {
+      class: classes,
+    };
+    if (props.id) res.id = props.id;
+    res.href = props.href ? props.href : "#";
+
+    return res;
+  };
   return (
-    <a id={props.id} class={classes} href={props.href || "#"}>
-      {props.children}
-    </a>
+    <a {...linkProps()}>{props.children}</a>
   );
 };
 
 export const Button: Component<ButtonProps> = (props: ButtonProps) => {
   return (
-    <Dynamic
-      {...props}
-      component={props.href ? AsLink : AsButton}
-    ></Dynamic>
+    <Dynamic {...props} component={props.href ? AsLink : AsButton}></Dynamic>
   );
 };
