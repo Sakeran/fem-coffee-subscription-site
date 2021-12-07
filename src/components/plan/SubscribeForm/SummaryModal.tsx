@@ -77,7 +77,7 @@ export const SummaryModal: Component<{
               </div>
               {/* Combined button for mobile */}
               <div class="max-w-max mx-auto md:hidden">
-                <Button>
+                <Button onClick={close}>
                   <span class="mx-4">Checkout - {getMonthlyCost()}/mo</span>
                 </Button>
               </div>
