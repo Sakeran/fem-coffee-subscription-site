@@ -11,6 +11,7 @@ import {
   getFrequencyOptions,
   FieldID,
   getOptionValue,
+  toggleOption,
 } from "./formState";
 
 export const Form: Component = () => {
@@ -64,6 +65,7 @@ export const Form: Component = () => {
       <Drawer
         title={formState.method.optionTitle}
         expanded={formState.method.isRevealed}
+        onToggle={() => toggleOption("method")}
       >
         <OptionGroup
           id="method"
@@ -79,6 +81,7 @@ export const Form: Component = () => {
       <Drawer
         title={formState.coffee.optionTitle}
         expanded={formState.coffee.isRevealed}
+        onToggle={() => toggleOption("coffee")}
       >
         <OptionGroup
           id="coffee"
@@ -94,6 +97,7 @@ export const Form: Component = () => {
       <Drawer
         title={formState.weight.optionTitle}
         expanded={formState.weight.isRevealed}
+        onToggle={() => toggleOption("weight")}
       >
         <OptionGroup
           id="weight"
@@ -110,6 +114,7 @@ export const Form: Component = () => {
         title={formState.grind.optionTitle}
         disabled={isCapsuleMethod()}
         expanded={formState.grind.isRevealed}
+        onToggle={() => toggleOption("grind")}
       >
         <OptionGroup
           id="grind"
@@ -125,6 +130,7 @@ export const Form: Component = () => {
       <Drawer
         title={formState.frequency.optionTitle}
         expanded={formState.frequency.isRevealed}
+        onToggle={() => toggleOption("frequency")}
       >
         <OptionGroup
           id="frequency"

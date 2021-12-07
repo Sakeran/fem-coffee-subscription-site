@@ -80,6 +80,10 @@ export const revealOption = (id: FieldID) => {
   setFormState(id, "isRevealed", true);
 };
 
+export const toggleOption = (id: FieldID) => {
+  setFormState(id, "isRevealed", prev => !prev);
+}
+
 export const setOptionValue = (id: FieldID, value: string) => {
   setFormState(id, "currentValue", value);
 };
