@@ -4,7 +4,7 @@ export const Option: Component<{
   data: { label: string; text: string };
   group: string;
   isSelected: boolean;
-  onSelect: (value: string) => void;
+  onSelect: (value: string, isClicked: boolean) => void;
 }> = (props) => {
   const bg = () => {
     if (props.isSelected) {
@@ -17,14 +17,14 @@ export const Option: Component<{
 
   const handleClick = (e: Event) => {
     e.preventDefault();
-    props.onSelect(props.data.label);
+    props.onSelect(props.data.label, true); 
   };
 
   const handleKeyDown = (e: KeyboardEvent) => {
     // Activate current element.
     if (e.key == " " || e.key == "Enter") {
       e.preventDefault();
-      props.onSelect(props.data.label);
+      props.onSelect(props.data.label, false);
     }
   };
 

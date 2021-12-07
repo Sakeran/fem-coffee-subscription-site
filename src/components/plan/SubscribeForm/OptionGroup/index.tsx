@@ -7,12 +7,12 @@ export const OptionGroup: Component<{
   title: string;
   options: { label: string; text: string }[];
   currentValue: string | undefined;
-  onSelect: (value: string) => void;
+  onSelect: (value: string, isClicked: boolean) => void;
 }> = (props) => {
 
-  const select = (value: string) => {
+  const select = (value: string, isClicked: boolean) => {
     if (props.currentValue === value) return;
-    props.onSelect(value);
+    props.onSelect(value, isClicked);
   };
 
   const handleKeyDown = (e: KeyboardEvent) => {
