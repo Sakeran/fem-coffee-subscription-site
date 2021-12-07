@@ -13,7 +13,7 @@ export const Option: Component<{
     return "bg-cream-200 hover:bg-accent focus-visible:bg-accent outline-none";
   };
 
-  const labelID = `${props.group}-${props.data.label}`;
+  const labelID = `${props.group}-${props.data.label.replace(/\s/g, "-")}`;
 
   const handleClick = (e: Event) => {
     e.preventDefault();
