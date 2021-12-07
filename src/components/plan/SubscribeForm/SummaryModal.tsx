@@ -30,7 +30,13 @@ export const SummaryModal: Component<{
     }
   };
 
+  const submit = (e: KeyboardEvent) => {
+    window.location.pathname = "/";
+  }
+
   const handleCapture = (e: KeyboardEvent) => {
+    if (!props.visible) return;
+
     if (e.key === "Escape" || e.key === "Esc") {
       close();
     }
@@ -73,11 +79,11 @@ export const SummaryModal: Component<{
               {/* Price+Button for tablet and up */}
               <div class="hidden md:flex md:items-center md:gap-3">
                 <p class="text-8 font-serif font-black">{getMonthlyCost()}/mo</p>
-                <Button onClick={close}>Checkout</Button>
+                <Button onClick={submit}>Checkout</Button>
               </div>
               {/* Combined button for mobile */}
               <div class="max-w-max mx-auto md:hidden">
-                <Button onClick={close}>
+                <Button onClick={submit}>
                   <span class="mx-4">Checkout - {getMonthlyCost()}/mo</span>
                 </Button>
               </div>
